@@ -1,0 +1,5 @@
+[0105/175007.664:ERROR:registration_protocol_win.cc(106)] CreateFile: The system cannot find the file specified. (0x2)
+[0105/175007.594:ERROR:registration_protocol_win.cc(106)] CreateFile: The system cannot find the file specified. (0x2)
+[0105/175007.829:ERROR:registration_protocol_win.cc(106)] CreateFile: The system cannot find the file specified. (0x2)
+[0110/122915.273:ERROR:registration_protocol_win.cc(106)] CreateFile: The system cannot find the file specified. (0x2)
+[0110/192026.375:ERROR:crashpad_client_win.cc(178)] crash server did not respond, self-terminating
