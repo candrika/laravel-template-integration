@@ -4,4 +4,4 @@
             @yield('content')
         </div>
     </div>
-</div>
+</div>src="{{asset('media/logos/logo-letter-1.png')}}"

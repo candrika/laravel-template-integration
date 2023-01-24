@@ -21,7 +21,6 @@
             <!--end::Aside Toggle-->
             <!--begin::Logo-->
             <a href="index.html">
-                {{-- assets/media/logos/logo-letter-1.png --}}
                 <img alt="Logo" src="{{asset('media/logos/logo-letter-1.png')}}" class="logo-sticky max-h-35px" />
             </a>
             <!--end::Logo-->
