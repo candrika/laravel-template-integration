@@ -1,15 +1,27 @@
 {{-- begin::Main --}}
-
 {{-- begin::Mobile Header --}}
 @include('layout.base._mobile-header')
 {{-- end::Mobile Header --}}
-@include('layout.base._aside')
-{{-- d-flex flex-column flex-row-fluid wrapper --}}
-<div class="d-flex flex-column flex-row-fluid-wrapper" id="kt_wrapper">
-    {{-- begin::Header --}}
-    @include('layout.base._header')
-    {{-- end:Header --}}
+{{-- begin::Page --}}
+<div class="d-flex flex-column flex-root">
+    {{-- begin::Aside --}}
+    <div class="aside aside-left d-flex flex-column flex-row-auto" id="kt_side">
+        @include('layout.base._aside')
+    </div>
+    {{-- end::Aside --}}
+    {{-- begin::Wrapper --}}
+    <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+        {{-- begin::Header --}}
+        @include('layout.base._header')
+        {{-- end::Header --}}
+        {{-- begin::Content --}}
+        @include('layout.base.content._content')
+        {{-- end::Content --}}
+        {{-- begin::Footer --}}
+        @include('layout.base._footer')
+        {{-- end::Footer --}}
+    </div>
+    {{-- end::Wrapper --}}
 </div>
-{{-- begin::Content --}}
-@include('layout.base.content._content')
-{{-- end::Content --}}
+{{-- end::Page --}}
+{{-- end::Main --}}

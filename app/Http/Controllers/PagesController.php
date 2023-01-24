@@ -12,6 +12,7 @@ class PagesController extends Controller
         $page_description = 'Some description for the page';
 
         return view('layout.base.content._dashboard', compact('page_title', 'page_description'));
+        // return view('_layout',compact('page_title', 'page_description'));
     }
 
     public function quickSeacrh()

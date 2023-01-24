@@ -7,7 +7,7 @@
     <meta name="description" content="@yield('page_description',$page_description ?? '')">
     <meta name="viewport" content="width=device-width,initial-scale=1, shrink-to-fit=no">
     {{-- Favicon --}}
-    <link rel="shortcuticon" href="{{asset('media/logos/favicon.ico')}}"/>
+    <link rel="shortcut icon" href="{{asset('media/logos/favicon.ico')}}"/>
     {{-- Font --}}
     {{-- {{Metronic::getGoogleFontsInclude()}} --}}
     {{-- Fonts --}}
@@ -18,6 +18,21 @@
     @endforeach
     {{-- Includable CSS --}}
     @yield('styles')
+    <script>
+        var HOST_URL ="{{route('quick-search')}}";
+    </script>
+    
+    <script>
+        var KTAppSettings ={!! json_encode(config('layout.js'),JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES) !!};
+    </script>
+    
+    {{-- Global Theme JS Bundle (used by all pages) --}}
+    @foreach (config('layout.resources.js') as $script)
+        <script src="{{asset($script)}}" type="type/javascript"></script>
+    @endforeach
+
+    {{-- Includable JS --}}
+    @yield('script')
 </head>
 {{-- quick-panel-right demo-panel-right offcanvas-right header-fixed header-mobile-fixed aside-enabled aside-static page-loading --}}
 <body id="kt_body" class="quick-panel-right demo-panel-right offcanvas-right header-fixed header-mobile-fixed aside-enabled aside-static page-loading">
@@ -26,21 +41,6 @@
     @endif
 
     @include('layout.base._layout')
-
-    <script>
-        var HOST_URL ="{{route('quick-search')}}";
-    </script>
-    
-    <script>
-        var KTAppSettings ={!! json_encode(config('layout.js'),JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES) !!};
-    </script>
-
-    {{-- Global Theme JS Bundle (used by all pages) --}}
-    @foreach (config('layout.resources.js') as $script)
-        <script src="{{asset($script)}}" type="type/javascript"></script>
-    @endforeach
-
-    {{-- Includable JS --}}
-    @yield('script')
+    {{-- <!-- @include('layout._full-layout') --> --}}
 </body>
 </html>

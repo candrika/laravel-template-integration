@@ -65,7 +65,7 @@ return [
                 'gray-900' => '#212121'
             ]
         ],
-        'font-family' => 'Poppins'
+        'fontFamily' => 'Poppins'
     ],
 
     // Page loader
@@ -272,12 +272,14 @@ return [
             'plugins/global/plugins.bundle.css',
             'plugins/custom/prismjs/prismjs.bundle.css',
             'css/style.bundle.css',
+            'plugins/custom/apexcharts/apexcharts.css'
         ],
         'js' => [
-            'plugins/global/plugins.bundle.js',
+            // 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js',
+            'plugins/custom/apexcharts/apexcharts.js',
             'plugins/custom/prismjs/prismjs.bundle.js',
             'js/scripts.bundle.js',
-            'js/pages/my-script.js'
+            'js/pages/my-script.js',
         ],
     ],
 

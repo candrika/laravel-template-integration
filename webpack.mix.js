@@ -16,10 +16,10 @@ mix.js('resources/js/app.js', 'public/js')
         //
     ]);
 // Global jquery
-// mix.autoload({
-// 'jquery': ['$', 'jQuery'],
-// Popper: ['popper.js', 'default'],
-// });
+mix.autoload({
+'jquery': ['$', 'jQuery'],
+Popper: ['popper.js', 'default'],
+});
 
 // 3rd party plugins css/js
 mix.sass('resources/plugins/plugins.scss', 'public/plugins/global/plugins.bundle.css').then(() => {
@@ -38,32 +38,32 @@ mix.sass('resources/metronic/sass/style.scss', 'public/css/style.bundle.css', {
     .js('resources/js/scripts.js', 'public/js/scripts.bundle.js');
 
 // Custom 3rd party plugins
-(glob.sync('resources/plugins/custom/**/*.js') || []).forEach(file => {
-    mix.js(file, `public/${file.replace('resources/', '').replace('.js', '.bundle.js')}`);
-});
-(glob.sync('resources/plugins/custom/**/*.scss') || []).forEach(file => {
-    mix.sass(file, `public/${file.replace('resources/', '').replace('.scss', '.bundle.css')}`);
-});
+// (glob.sync('resources/plugins/custom/**/*.js') || []).forEach(file => {
+//     mix.js(file, `public/${file.replace('resources/', '').replace('.js', '.bundle.js')}`);
+// });
+// (glob.sync('resources/plugins/custom/**/*.scss') || []).forEach(file => {
+//     mix.sass(file, `public/${file.replace('resources/', '').replace('.scss', '.bundle.css')}`);
+// });
 
 // Metronic css pages (single page use)
-(glob.sync('resources/metronic/sass/pages/**/!(_)*.scss') || []).forEach(file => {
-    file = file.replace(/[\\\/]+/g, '/');
-    mix.sass(file, file.replace('resources/metronic/sass', 'public/css').replace(/\.scss$/, '.css'));
-});
+// (glob.sync('resources/metronic/sass/pages/**/!(_)*.scss') || []).forEach(file => {
+//     file = file.replace(/[\\\/]+/g, '/');
+//     mix.sass(file, file.replace('resources/metronic/sass', 'public/css').replace(/\.scss$/, '.css'));
+// });
 
 // Metronic js pages (single page use)
-(glob.sync('resources/metronic/js/pages/**/*.js') || []).forEach(file => {
-    mix.js(file, `public/${file.replace('resources/metronic/', '')}`);
-});
+// (glob.sync('resources/metronic/js/pages/**/*.js') || []).forEach(file => {
+//     mix.js(file, `public/${file.replace('resources/metronic/', '')}`);
+// });
 
 // Metronic media
-mix.copyDirectory('resources/metronic/media', 'public/media');
+// mix.copyDirectory('resources/metronic/media', 'public/media');
 
 // Metronic theme
-(glob.sync('resources/metronic/sass/themes/**/!(_)*.scss') || []).forEach(file => {
-    file = file.replace(/[\\\/]+/g, '/');
-    mix.sass(file, file.replace('resources/metronic/sass', 'public/css').replace(/\.scss$/, '.css'));
-});
+// (glob.sync('resources/metronic/sass/themes/**/!(_)*.scss') || []).forEach(file => {
+//     file = file.replace(/[\\\/]+/g, '/');
+//     mix.sass(file, file.replace('resources/metronic/sass', 'public/css').replace(/\.scss$/, '.css'));
+// });
 
 mix.webpackConfig({
     plugins: [
@@ -110,14 +110,14 @@ mix.webpackConfig({
 });
 
 // Webpack.mix does not copy fonts, manually copy
-(glob.sync('resources/metronic/plugins/**/*.+(woff|woff2|eot|ttf)') || []).forEach(file => {
-    var folder = file.match(/resources\/metronic\/plugins\/(.*?)\//)[1];
-    mix.copy(file, `public/plugins/global/fonts/${folder}/${path.basename(file)}`);
-});
-(glob.sync('node_modules/+(@fortawesome|socicon|line-awesome)/**/*.+(woff|woff2|eot|ttf)') || []).forEach(file => {
-    var folder = file.match(/node_modules\/(.*?)\//)[1];
-    mix.copy(file, `public/plugins/global/fonts/${folder}/${path.basename(file)}`);
-});
+// (glob.sync('resources/metronic/plugins/**/*.+(woff|woff2|eot|ttf)') || []).forEach(file => {
+//     var folder = file.match(/resources\/metronic\/plugins\/(.*?)\//)[1];
+//     mix.copy(file, `public/plugins/global/fonts/${folder}/${path.basename(file)}`);
+// });
+// (glob.sync('node_modules/+(@fortawesome|socicon|line-awesome)/**/*.+(woff|woff2|eot|ttf)') || []).forEach(file => {
+//     var folder = file.match(/node_modules\/(.*?)\//)[1];
+//     mix.copy(file, `public/plugins/global/fonts/${folder}/${path.basename(file)}`);
+// });
 
 // Optional: Import datatables.net
 mix.scripts([
